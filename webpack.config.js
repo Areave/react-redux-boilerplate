@@ -72,9 +72,7 @@ module.exports = function (_, webpackEnv) {
         test: /\.(ts|tsx)$/, exclude: /node_modules/, loader: 'ts-loader'};
 
     const cssRule = {
-        test: /\.s?css$/,
-        // exclude: /node_modules/,
-        use: getStyleLoaders()
+        test: /\.s?css$/, loader: getStyleLoaders()
     };
 
     const fontsRule = {
