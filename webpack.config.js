@@ -72,7 +72,36 @@ module.exports = function (_, webpackEnv) {
         test: /\.(ts|tsx)$/, exclude: /node_modules/, loader: 'ts-loader'};
 
     const cssRule = {
-        test: /\.s?css$/, loader: getStyleLoaders()
+        test: /\.s?css$/, use: [
+            MiniCss.loader,
+            {
+                loader: 'css-Loader',
+                options: {
+                    esModule: true,
+                    // modules: {
+                    //     localIdentName: isDevelopment
+                    //         ? '[folder]_[local]_[hash:base64:4]'
+                    //         : '[hash:base64:5]',
+                    // },
+                    sourceMap: isDevelopment,
+                }
+            },
+            {
+                loader: 'postcss-Loader',
+                options: {
+                    postcssOptions: {
+                        plugins: ['autoprefixer']
+                    }
+                }
+            },
+            {
+                loader: 'sass-Loader',
+                options: {
+                    implementation: require('sass'),
+                    sourceMap: isDevelopment
+                }
+            }
+        ]
     };
 
     const fontsRule = {
