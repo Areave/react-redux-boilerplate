@@ -35,10 +35,10 @@ module.exports = function (_, webpackEnv) {
     const isProduction = webpackEnv.mode === 'production';
     const getStyleLoaders = () => {
         return [
-            isDevelopment && 'style-Loader',
+            isDevelopment && 'style-loader',
             isProduction && MiniCss.loader,
             {
-                loader: 'css-Loader',
+                loader: 'css-loader',
                 options: {
                     esModule: true,
                     // modules: {
@@ -50,7 +50,7 @@ module.exports = function (_, webpackEnv) {
                 }
             },
             {
-                loader: 'postcss-Loader',
+                loader: 'postcss-loader',
                 options: {
                     postcssOptions: {
                         plugins: ['autoprefixer']
@@ -58,7 +58,7 @@ module.exports = function (_, webpackEnv) {
                 }
             },
             {
-                loader: 'sass-Loader',
+                loader: 'sass-loader',
                 options: {
                     implementation: require('sass'),
                     sourceMap: isDevelopment
@@ -75,7 +75,7 @@ module.exports = function (_, webpackEnv) {
         test: /\.s?css$/, use: [
             MiniCss.loader,
             {
-                loader: 'css-Loader',
+                loader: 'css-loader',
                 options: {
                     esModule: true,
                     // modules: {
