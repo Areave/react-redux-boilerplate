@@ -69,9 +69,7 @@ module.exports = function (_, webpackEnv) {
     };
 
     const tsRule = {
-        test: /\.(ts|tsx)$/,
-        use: ['ts-Loader']
-    };
+        test: /\.(ts|tsx)$/, exclude: /node_modules/, loader: 'ts-loader'};
 
     const cssRule = {
         test: /\.s?css$/,
