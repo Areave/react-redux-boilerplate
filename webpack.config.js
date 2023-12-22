@@ -87,7 +87,7 @@ module.exports = function (_, webpackEnv) {
                 }
             },
             {
-                loader: 'postcss-Loader',
+                loader: 'postcss-loader',
                 options: {
                     postcssOptions: {
                         plugins: ['autoprefixer']
@@ -95,7 +95,7 @@ module.exports = function (_, webpackEnv) {
                 }
             },
             {
-                loader: 'sass-Loader',
+                loader: 'sass-loader',
                 options: {
                     implementation: require('sass'),
                     sourceMap: isDevelopment
@@ -118,7 +118,7 @@ module.exports = function (_, webpackEnv) {
         // type: 'asset/resource',
         exclude: [/node_modules/, /\.(js|mjs|jsx|ts|tsx)$/, /\.html$/, /\.json$/],
         use: [{
-            loader: 'file-Loader',
+            loader: 'file-loader',
             options: {
                 outputPath: 'assets/images/',
                 name: '[name]_[contenthash:8].[ext]'
